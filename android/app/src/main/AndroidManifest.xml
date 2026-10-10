@@ -1,0 +1,108 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="29" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+
+    <queries>
+        <package android:name="come.nanodata.armsx2" />
+        <package android:name="come.nanodata.armsx2.debug" />
+        <package android:name="com.nanodata.armsx2" />
+        <package android:name="com.nanodata.armsx2.custom" />
+        <package android:name="com.nanodata.armsx2.debug" />
+        <package android:name="com.armsx2.custom" />
+        <package android:name="com.armsx2" />
+        <package android:name="com.armsx2.android" />
+        <package android:name="xyz.armsx2.android" />
+        <package android:name="org.armsx2.android" />
+        <package android:name="kr.co.iefriends.pcsx2" />
+        <package android:name="com.iefriends.pcsx2" />
+        <package android:name="kr.co.iefriends.armsx2" />
+        <package android:name="com.iefriends.armsx2" />
+        <package android:name="xyz.aethersx2.android" />
+        <package android:name="xyz.nethersx2.android" />
+        <package android:name="xyz.nethersx2.android.classic" />
+        <package android:name="org.playstation2.aethersx2" />
+        <package android:name="org.purei.play" />
+        <package android:name="org.ppsspp.ppsspp" />
+        <package android:name="org.ppsspp.ppssppgold" />
+        <package android:name="com.github.stenzek.duckstation" />
+        <package android:name="com.epsxe.ePSXe" />
+        <package android:name="com.retroarch" />
+        <package android:name="com.retroarch.aarch64" />
+        <package android:name="com.retroarch.ra32" />
+        <package android:name="com.fastemulator.gba" />
+        <package android:name="com.fastemulator.gbafree" />
+        <package android:name="it.dbassprod.pizzaboygba" />
+        <package android:name="it.dbassprod.pizzaboygbapro" />
+        <package android:name="it.dbtecno.pizzaboygba" />
+        <package android:name="it.dbtecno.pizzaboygbapro" />
+        <package android:name="com.explusalpha.GbaEmu" />
+        <package android:name="com.fastemulator.gbc" />
+        <package android:name="com.fastemulator.gbcfree" />
+        <package android:name="it.dbassprod.pizzaboygbc" />
+        <package android:name="it.dbassprod.pizzaboygbcpro" />
+        <package android:name="it.dbtecno.pizzaboy" />
+        <package android:name="it.dbtecno.pizzaboypro" />
+        <package android:name="com.explusalpha.GbcEmu" />
+        <package android:name="com.explusalpha.Snes9xExP" />
+        <package android:name="com.neutronites.superretro16" />
+        <package android:name="org.mupen64plusae.v3.fzurita" />
+        <package android:name="org.mupen64plusae.v3.fzurita.pro" />
+        <package android:name="com.explusalpha.NesEmu" />
+        <package android:name="com.nostalgiaemulators.neslite" />
+        <package android:name="com.nostalgiaemulators.nesfull" />
+        <package android:name="com.explusalpha.MdEmu" />
+        <package android:name="com.explusalpha.A2600Emu" />
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="file" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="content" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+        </intent>
+    </queries>
+
+    <application
+      android:name=".MainApplication"
+      android:label="@string/app_name"
+      android:allowBackup="false"
+      android:theme="@style/AppTheme"
+      android:usesCleartextTraffic="true"
+      android:requestLegacyExternalStorage="true">
+      <activity
+        android:name=".MainActivity"
+        android:label="@string/app_name"
+        android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
+        android:launchMode="singleTask"
+        android:windowSoftInputMode="adjustResize"
+        android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+      </activity>
+      <provider
+        android:name="androidx.core.content.FileProvider"
+        android:authorities="com.retroscan.fileprovider"
+        android:exported="false"
+        android:grantUriPermissions="true">
+        <meta-data
+            android:name="android.support.FILE_PROVIDER_PATHS"
+            android:resource="@xml/file_paths" />
+      </provider>
+    </application>
+</manifest>

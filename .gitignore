@@ -1,0 +1,26 @@
+﻿node_modules/
+.idea/
+.vscode/
+android/.gradle/
+android/build/
+android/app/build/
+android/.cxx/
+android/local.properties
+TempRetroScan/
+*.png
+*.log
+aethersx2_base.apk
+manifest.txt
+.env
+.env.*
+!.env.example
+*.iso
+*.chd
+*.cso
+*.pbp
+*.cue
+*.jks
+*.keystore
+
+# Generated React Native bundle
+android/app/src/main/assets/index.android.bundle

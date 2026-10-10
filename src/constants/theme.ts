@@ -1,0 +1,62 @@
+export const THEME = {
+  colors: {
+    background: '#000000',
+    surface: '#080808',
+    card: '#0F0F0F',
+    cardElevated: '#171717',
+    border: '#1F1F1F',
+    borderLight: '#2C2C2C',
+    textPrimary: '#FFFFFF',
+    textSecondary: '#8E8E93',
+    textMuted: '#525252',
+    accent: '#00E5FF',
+    accentGreen: '#39FF14',
+    accentAmber: '#FFB800',
+    accentRed: '#FF3366',
+    overlay: 'rgba(0, 0, 0, 0.85)',
+  },
+  typography: {
+    title: {
+      fontSize: 22,
+      fontWeight: '700' as const,
+      color: '#FFFFFF',
+      letterSpacing: 0.3,
+    },
+    subtitle: {
+      fontSize: 16,
+      fontWeight: '600' as const,
+      color: '#FFFFFF',
+    },
+    body: {
+      fontSize: 14,
+      fontWeight: '400' as const,
+      color: '#8E8E93',
+      lineHeight: 20,
+    },
+    caption: {
+      fontSize: 12,
+      fontWeight: '500' as const,
+      color: '#525252',
+    },
+    code: {
+      fontSize: 13,
+      fontWeight: '700' as const,
+      color: '#00E5FF',
+      letterSpacing: 1,
+    },
+  },
+  spacing: {
+    xs: 4,
+    sm: 8,
+    md: 12,
+    lg: 16,
+    xl: 24,
+    xxl: 32,
+  },
+  radius: {
+    sm: 4,
+    md: 8,
+    lg: 12,
+    full: 9999,
+  },
+};
