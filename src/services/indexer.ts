@@ -158,6 +158,34 @@ export class RomIndexer {
   ): Promise<void> {
     if (this.isCancelled) return;
 
+    if (isRoot) {
+      try {
+        const stat = await RNFS.stat(dirPath);
+        if (stat.isFile()) {
+          const fileName = dirPath.split('/').pop() || dirPath;
+          let consoleId = detectConsoleFromExtension(fileName, dirPath);
+          if (!consoleId && fileName.toLowerCase().endsWith('.zip')) {
+            const innerName = await getZipInnerName(dirPath);
+            if (innerName) {
+              consoleId = detectConsoleFromExtension(innerName, dirPath);
+            }
+          }
+
+          if (consoleId) {
+            results.push({
+              path: dirPath,
+              name: fileName,
+              size: Number(stat.size),
+              consoleId,
+            });
+          }
+          return;
+        }
+      } catch {
+        // Fall through to directory read
+      }
+    }
+
     try {
       const items = await RNFS.readDir(dirPath);
 
